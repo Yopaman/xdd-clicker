@@ -1,0 +1,77 @@
+body {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+#click-zone {
+    margin: auto;
+}
+
+#xd-text {
+    padding-top: 20px; 
+    height: 97%;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+}
+
+#score {
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+#cps {
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+#shop {
+    position: absolute;
+    width: 250px;
+    height: 500px;
+    margin: 10px;
+    right: 0;
+    text-align: center;
+    display: none;
+    padding: 0px;
+}
+
+#close-shop {
+    position: absolute;
+    margin: 5px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+#shop-content {
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+#shop-item {
+    margin: 10px;
+    vertical-align: 0;
+    cursor: pointer;
+}
+
+#item-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    margin-top: 10px;
+}
+
+.nav-wrapper {
+    background-color: #3f51b5;
+}
+
+.brand-logo {
+    margin-left: 15px;
+}

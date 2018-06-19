@@ -99,3 +99,37 @@ main {
 .brand-logo {
     margin-left: 15px;
 }
+
+@media (max-width: 576px) { 
+    nav {
+        height: 200px;
+        text-align: center;
+        box-align: center;
+    }
+
+    #shop {
+        top: 200px;
+    }
+
+    #nav-mobile {
+        position: absolute;
+        top: 80px;
+        margin: auto;
+    }
+
+    #save-button {
+        scale: 50;
+        font-size: 20px;
+        margin: auto;
+    }
+
+    #shop-button {
+        scale: 50;
+        font-size: 20px;
+    }
+
+    li {
+        display: block;
+        margin: auto;
+    }
+}

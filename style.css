@@ -8,6 +8,17 @@ body {
                                     supported by Chrome and Opera */
 }
 
+nav {
+    position: fixed;
+    z-index: 1;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 #click-zone {
     margin: auto;
 }
@@ -15,8 +26,8 @@ body {
 #xd-text {
     padding-top: 20px; 
     height: 97%;
-    overflow-y: auto;
     overflow-wrap: break-word;
+    box-sizing: content-box;
 }
 
 #score {
@@ -30,7 +41,7 @@ body {
 }
 
 #shop {
-    position: absolute;
+    position: fixed;
     width: 250px;
     height: 500px;
     margin: 10px;
@@ -38,6 +49,23 @@ body {
     text-align: center;
     display: none;
     padding: 0px;
+    top: 64px;
+    z-index: 1;
+}
+
+#shop-titlebar {
+    height: 60px;
+    padding-top: 10px;
+}
+
+#shop-window {
+    height: 440px;
+    overflow-y: auto
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 #close-shop {
@@ -62,10 +90,6 @@ body {
 #item-title {
     font-size: 20px;
     margin-bottom: 5px;
-}
-
-.card-title {
-    margin-top: 10px;
 }
 
 .nav-wrapper {

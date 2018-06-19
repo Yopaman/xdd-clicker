@@ -5,13 +5,14 @@ $("#click-zone").height($(window).height() - $("nav").height());
 if (localStorage.getItem("dNumber") == null && localStorage.getItem("cps") == null) {
     var dNumber = 0;
     var cps = 0;
-    var shopItemsCount = [0, 0, 0, 0];
+    var shopItemsCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 } else {
     var dNumber = parseInt(localStorage.getItem("dNumber"));
     $("#score").text(dNumber + " D");
     $("#xd-text").append(document.createTextNode("D".repeat(dNumber)));
     var cps = parseInt(localStorage.getItem("cps"));
-    var shopItemsCount = [0, 0, 0, 0];
+    $("#cps").text(cps + " clics / s")
+    var shopItemsCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     for (var i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i).startsWith("item")) {
             var arrayIndex = localStorage.key(i).slice(5)
@@ -54,7 +55,7 @@ function buyInShop(cpsAdded, cost, itemIndex) {
 function click(number) {
     dNumber += number;
     $("#score").text(dNumber + " D");
-    $("#xd-text").append(document.createTextNode("D"));
+    $("#xd-text").append(document.createTextNode("D".repeat(number)));
 }
 
 $("main").click(function() {

@@ -32,8 +32,12 @@
                             <span id="score">0 D</span>
                             <span id="cps">0 clics / s</span>
                         </li>
-                        <li><a class="waves-effect waves-light btn" id="save-button">SAUVEGARDER</a></li>
-                        <li><a class="waves-effect waves-light btn" id="shop-button">Shop<i class="material-icons right">add_shopping_cart</i></a></li>
+
+                        <li>
+                            <a class="waves-effect waves-light btn" id="save-button" onclick="M.toast({html: 'Partie sauvegardée'})">SAUVEGARDER</a>
+                            <a class="waves-effect waves-light btn" id="shop-button">Shop<i class="material-icons right">add_shopping_cart</i></a>
+                            <a class="btn-floating btn-small waves-effect waves-light grey" id="infos-button"><i class="material-icons">info_outline</i></a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -95,11 +99,41 @@
                         </div>
                 </div>
             </div>
+
+            <!-- Infos -->
+            <div id="infos" class="card white">
+                <a id="close-infos"><i class="material-icons black-text">close</i></a>
+                <div class="card-content" id="shop-content">
+                    <span class="card-title center-align">infos</span>
+                    <p id="game-desc">
+                        Le but du jeu est de cliquer, pour faire apparaitre des D. Les D vous permettent d'acheter des bonus qui cliquent à votre place.<br/><br/>
+                        Les D se regroupent en "super-D" :<br/><br/>
+                        D = 1 D<br/>
+                        <span style="color: #40c000">D</span> = 10 D<br/>
+                        <span style="color: #00b6a7">D</span> = 100D<br/>
+                        <span style="color: #162dff">D</span> = 1000 D<br/>
+                        <span style="color: #b916ff">D</span> = 10 000 D<br/>
+                        <span style="color: #ff0909">D</span> = 100 000 D<br/>
+                        <span style="color: #750000">D</span> = 1 000 000 D<br/>
+                    </p>
+                </div>
+            </div>
+
     </header>
+
     <!-- Zone to click -->
     <main>
         <div class="container text-center" id="click-zone">
-            <div id="xd-text">X</div>
+            <div id="xd-text">
+                X
+                <span style="color: #750000" id="millions"></span>
+                <span style="color: #ff0909" id="hundred-thousands"></span>
+                <span style="color: #b916ff" id="ten-thousands"></span>
+                <span style="color: #162dff" id="thousands"></span>
+                <span style="color: #00b6a7" id="hundreds"></span>
+                <span style="color: #40c000" id="tens"></span>
+                <span id="ones"></span>
+            </div>
         </div>
     </main>
     

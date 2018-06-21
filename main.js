@@ -111,7 +111,7 @@ function appendD(number) {
         $("#tens").append(document.createTextNode("D".repeat(tens)));
         $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
         $("#thousands").append(document.createTextNode("D".repeat(thousands)));
-    } else if (10000 <= number && number < 1000000) {
+    } else if (10000 <= number && number < 100000) {
         $("#ones").append(document.createTextNode("D".repeat(ones)));
         $("#tens").append(document.createTextNode("D".repeat(tens)));
         $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));

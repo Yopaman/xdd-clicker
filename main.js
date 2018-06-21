@@ -37,7 +37,7 @@ function startInterval() {
 function buyInShop(cpsAdded, cost, itemIndex) {
     if (cost <= dNumber) {
         dNumber -= cost;
-        $("#score").text(cost + " D");
+        $("#score").text(dNumber + " D");
         var ones = Math.floor(cost % 10),
             tens = Math.floor(cost/10 % 10),
             hundreds = Math.floor(cost/100 % 10),
@@ -47,21 +47,35 @@ function buyInShop(cpsAdded, cost, itemIndex) {
             millions = Math.floor(cost / 1000000 % 10),
             tenMillions = Math.floor(cost / 10000000 % 10),
             hundredMillions = Math.floor(cost / 100000000 % 10);
-        $("#ones").text("D".repeat($("#ones").text().length - ones));
-        $("#tens").text("D".repeat($("#tens").text().length - tens));
-        $("#hundreds").text("D".repeat($("#hundreds").text().length - hundreds));
-        $("#thousands").text("D".repeat($("#thousands").text().length - thousands));
-        $("#ten-thousands").text("D".repeat($("#ten-thousands").text().length - tenThousands));
-        $("#hundred-thousands").text("D".repeat($("#hundred-thousands").text().length - hundredThousands));
-        $("#millions").text("D".repeat($("#millions").text().length - millions));
+        $("#ones").text("");
+        $("#tens").text("");
+        $("#hundreds").text("");
+        $("#thousands").text("");
+        $("#ten-thousands").text("");
+        $("#hundred-thousands");
+        $("#millions").text("");
+        appendD(dNumber);
         cps = cps += cpsAdded;
         $("#cps").text(cps + " clics / s");
         if (clickInterval != undefined) {
             clearInterval(clickInterval);
         }
         startInterval();
-        shopItemsCount[itemIndex]++
+        shopItemsCount[itemIndex]++;
+        $(".shop-item-" + itemIndex).removeClass("white");
+        $(".shop-item-" + itemIndex).addClass("green lighten-3");
+        setTimeout(function() {
+            $(".shop-item-" + itemIndex).removeClass("green lighten-3");
+            $(".shop-item-" + itemIndex).addClass("white");
+        }, 500);
         $("#info-item-" + itemIndex).text("En votre possession: " + shopItemsCount[itemIndex])
+    } else {
+        $(".shop-item-" + itemIndex).removeClass("white");
+        $(".shop-item-" + itemIndex).addClass("red lighten-3");
+        setTimeout(function() {
+            $(".shop-item-" + itemIndex).removeClass("red lighten-3");
+            $(".shop-item-" + itemIndex).addClass("white");
+        }, 500);
     }
 }
 
@@ -167,5 +181,10 @@ $("#infos-button,#close-infos").click(function() {
     $("#infos").fadeToggle("fast");
     $(".toast").hide();
     $("#shop").hide();
+});
+
+$("#reset-button").click(function() {
+    localStorage.clear();
+    location.reload();
 });
 

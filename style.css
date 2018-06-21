@@ -108,6 +108,10 @@ main {
     margin: auto;
 }
 
+#reset-button {
+    margin: auto;
+}
+
 .toast {
     position: fixed;
     top: 64px;

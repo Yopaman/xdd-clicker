@@ -82,7 +82,14 @@ function buyInShop(cpsAdded, cost, itemIndex) {
 function click(number) {
     dNumber += number;
     $("#score").text(dNumber + " D");
-    appendD(number);
+    $("#ones").text("");
+    $("#tens").text("");
+    $("#hundreds").text("");
+    $("#thousands").text("");
+    $("#ten-thousands").text("");
+    $("#hundred-thousands");
+    $("#millions").text("");
+    appendD(dNumber);
 }
 
 function appendD(number) {
@@ -96,42 +103,13 @@ function appendD(number) {
         tenMillions = Math.floor(number / 10000000 % 10),
         hundredMillions = Math.floor(number / 100000000 % 10);
 
-    if (number < 10) {
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-    } else if (10 <= number && number < 100) { 
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-        $("#tens").append(document.createTextNode("D".repeat(tens)));
-    } else if (100 <= number && number < 1000) {
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-        $("#tens").append(document.createTextNode("D".repeat(tens)));
-        $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
-        console.log(hundreds);
-    } else if (1000 <= number && number < 10000) {
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-        $("#tens").append(document.createTextNode("D".repeat(tens)));
-        $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
-        $("#thousands").append(document.createTextNode("D".repeat(thousands)));
-    } else if (10000 <= number && number < 100000) {
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-        $("#tens").append(document.createTextNode("D".repeat(tens)));
-        $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
-        $("#thousands").append(document.createTextNode("D".repeat(thousands)));
-        $("#ten-thousands").append(document.createTextNode("D".repeat(tenThousands)));
-    } else if (100000 <= number && number < 1000000) {
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-        $("#tens").append(document.createTextNode("D".repeat(tens)));
-        $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
-        $("#thousands").append(document.createTextNode("D".repeat(thousands)));
-        $("#ten-thousands").append(document.createTextNode("D".repeat(tenThousands)));
-        $("#hundred-thousand").append(document.createTextNode("D".repeat(hundredThousands)));
-    } else if (1000000 <= number && number < 10000000) {
-        $("#ones").append(document.createTextNode("D".repeat(ones)));
-        $("#tens").append(document.createTextNode("D".repeat(tens)));
-        $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
-        $("#thousands").append(document.createTextNode("D".repeat(thousands)));
-        $("#ten-thousands").append(document.createTextNode("D".repeat(tenThousands)));
-        $("#millions").append(document.createTextNode("D".repeat(millions)));
-    }
+    $("#ones").append(document.createTextNode("D".repeat(ones)));
+    $("#tens").append(document.createTextNode("D".repeat(tens)));
+    $("#hundreds").append(document.createTextNode("D".repeat(hundreds)));
+    $("#thousands").append(document.createTextNode("D".repeat(thousands)));
+    $("#ten-thousands").append(document.createTextNode("D".repeat(tenThousands)));
+    $("#hundred-thousands").append(document.createTextNode("D".repeat(hundredThousands)));
+    $("#millions").append(document.createTextNode("D".repeat(millions)));
 
     if ($("#ones").text().length >= 10) {
         $("#ones").text("");
@@ -147,12 +125,12 @@ function appendD(number) {
         $("#thousands").append(document.createTextNode("D"));
     } else if ($("#thousands").text().length >= 10) {
         $("#thousands").text("");
-        $("#tenThousands").append(document.createTextNode("D"));
-    } else if ($("#tenThousands").text().length >= 10) {
-        $("#tenThousands").text("");
-        $("#hundredThousands").append(document.createTextNode("D"));
-    } else if ($("#hundredThousands").text().length >= 10) {
-        $("#hundredThousands").text("");
+        $("#ten-thousands").append(document.createTextNode("D"));
+    } else if ($("#ten-thousands").text().length >= 10) {
+        $("#ten-thousands").text("");
+        $("#hundred-thousands").append(document.createTextNode("D"));
+    } else if ($("#hundred-thousands").text().length >= 10) {
+        $("#hundred-thousands").text("");
         $("#millions").append(document.createTextNode("D"));
     }
 }
